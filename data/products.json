@@ -1,0 +1,99 @@
+[
+  {
+    "id": "starter-kit",
+    "slug": "starter-kit",
+    "name": "Starter Birb Kit",
+    "price": 89.99,
+    "description": "Perfect for beginners! This kit includes everything you need to start capturing amazing bird photos in your backyard. Easy to assemble with our step-by-step guide.",
+    "longDescription": "The Starter Birb Kit is designed for bird enthusiasts who want to dip their toes into smart bird watching. The kit comes with a Raspberry Pi Zero 2 W, a quality 5MP camera module, and a simple but effective wooden feeder base. The included software captures photos whenever motion is detected, storing them locally for you to browse. Perfect for beginners and makes a great gift!",
+    "features": [
+      "Raspberry Pi Zero 2 W",
+      "5MP Camera Module",
+      "Wooden feeder base",
+      "Pre-configured SD card",
+      "Power adapter",
+      "Step-by-step assembly guide"
+    ],
+    "image": "/images/products/starter-kit.svg",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "pro-kit",
+    "slug": "pro-kit",
+    "name": "Pro Birb Kit",
+    "price": 149.99,
+    "description": "For serious bird watchers! Features a high-resolution camera, weather-resistant enclosure, and WiFi streaming capabilities.",
+    "longDescription": "Take your bird watching to the next level with the Pro Birb Kit. This premium package includes a Raspberry Pi 4 with 2GB RAM, a stunning 12MP camera module with autofocus, and a weather-resistant enclosure that can withstand rain, snow, and sun. Stream live video to your phone, get instant notifications when birds arrive, and capture crystal-clear photos day or night with the included IR LEDs.",
+    "features": [
+      "Raspberry Pi 4 (2GB RAM)",
+      "12MP Autofocus Camera",
+      "Weather-resistant enclosure",
+      "IR LEDs for night vision",
+      "WiFi streaming capability",
+      "Mobile app access",
+      "Large capacity feeder"
+    ],
+    "image": "/images/products/pro-kit.svg",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "ultimate-kit",
+    "slug": "ultimate-kit",
+    "name": "Ultimate Birb Kit",
+    "price": 249.99,
+    "description": "The complete package! AI-powered bird identification, solar charging, and cloud storage for all your birb photos.",
+    "longDescription": "The Ultimate Birb Kit is for the dedicated ornithologist who wants the absolute best. This kit features a Raspberry Pi 4 with 4GB RAM running our custom AI software that automatically identifies bird species in real-time. Solar panels keep your feeder running indefinitely, while cloud integration ensures you never lose a precious photo. Includes premium cedar wood construction and a lifetime software license.",
+    "features": [
+      "Raspberry Pi 4 (4GB RAM)",
+      "12MP Camera with wide-angle lens",
+      "AI bird species identification",
+      "Solar panel with battery backup",
+      "Cloud storage (1 year included)",
+      "Premium cedar wood construction",
+      "Dual feeding stations",
+      "Temperature & humidity sensors",
+      "Lifetime software updates"
+    ],
+    "image": "/images/products/ultimate-kit.svg",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "id": "camera-upgrade",
+    "slug": "camera-upgrade",
+    "name": "Camera Upgrade Module",
+    "price": 39.99,
+    "description": "Upgrade your existing kit with this 12MP autofocus camera module. Compatible with all Birb Kits.",
+    "longDescription": "Want better photos from your existing setup? This 12MP camera upgrade module is a drop-in replacement for the cameras in our Starter and Pro kits. Features autofocus for crystal-clear images and improved low-light performance.",
+    "features": [
+      "12MP resolution",
+      "Autofocus capability",
+      "Improved low-light sensor",
+      "Compatible with all kits",
+      "Easy installation"
+    ],
+    "image": "/images/products/camera-upgrade.svg",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "id": "solar-addon",
+    "slug": "solar-addon",
+    "name": "Solar Power Add-on",
+    "price": 59.99,
+    "description": "Go off-grid! Solar panel and battery pack to power your bird feeder anywhere in your yard.",
+    "longDescription": "Free your bird feeder from power outlets with this solar add-on kit. Includes a high-efficiency solar panel and a rechargeable battery pack that provides up to 3 days of operation without sun. Perfect for remote locations in your yard.",
+    "features": [
+      "5W solar panel",
+      "10000mAh battery pack",
+      "Weatherproof connectors",
+      "Mounting hardware included",
+      "Works with all kits"
+    ],
+    "image": "/images/products/solar-addon.svg",
+    "inStock": true,
+    "featured": false
+  }
+]

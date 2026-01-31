@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect fill="#f0fdf4" width="400" height="300"/>
+  <rect x="100" y="60" width="200" height="120" rx="10" fill="#16a34a"/>
+  <circle cx="200" cy="110" r="35" fill="#0ea5e9"/>
+  <rect x="185" y="95" width="30" height="30" rx="3" fill="#1e3a8a"/>
+  <rect x="270" y="70" width="20" height="15" rx="2" fill="#dc2626"/>
+  <rect x="120" y="190" width="160" height="70" rx="5" fill="#78350f"/>
+  <rect x="130" y="200" width="140" height="50" rx="3" fill="#fbbf24"/>
+  <circle cx="200" cy="225" r="15" fill="#92400e"/>
+  <text x="200" y="285" font-family="Arial" font-size="14" fill="#4b5563" text-anchor="middle">Pro Kit</text>
+</svg>

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "imageUrl": "/images/gallery/cardinal.svg",
+    "caption": "Beautiful cardinal enjoying breakfast",
+    "submittedBy": "Sarah M.",
+    "birdType": "Northern Cardinal",
+    "location": "Ohio",
+    "approved": true,
+    "featured": true
+  },
+  {
+    "id": "2",
+    "imageUrl": "/images/gallery/bluejay.svg",
+    "caption": "Curious blue jay checking out the feeder",
+    "submittedBy": "Mike T.",
+    "birdType": "Blue Jay",
+    "location": "Michigan",
+    "approved": true,
+    "featured": true
+  },
+  {
+    "id": "3",
+    "imageUrl": "/images/gallery/chickadee.svg",
+    "caption": "Tiny chickadee in the morning light",
+    "submittedBy": "Emma L.",
+    "birdType": "Black-capped Chickadee",
+    "location": "Vermont",
+    "approved": true,
+    "featured": true
+  },
+  {
+    "id": "4",
+    "imageUrl": "/images/gallery/hummingbird.svg",
+    "caption": "Hummingbird caught mid-flight!",
+    "submittedBy": "Carlos R.",
+    "birdType": "Ruby-throated Hummingbird",
+    "location": "Texas",
+    "approved": true,
+    "featured": false
+  },
+  {
+    "id": "5",
+    "imageUrl": "/images/gallery/woodpecker.svg",
+    "caption": "Woodpecker drumming away",
+    "submittedBy": "Jennifer K.",
+    "birdType": "Downy Woodpecker",
+    "location": "Pennsylvania",
+    "approved": true,
+    "featured": false
+  },
+  {
+    "id": "6",
+    "imageUrl": "/images/gallery/finch.svg",
+    "caption": "Goldfinch family reunion",
+    "submittedBy": "David W.",
+    "birdType": "American Goldfinch",
+    "location": "Colorado",
+    "approved": true,
+    "featured": false
+  }
+]
