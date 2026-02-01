@@ -1,11 +1,18 @@
 "use client";
 
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 
 export default function WaitlistPage() {
+  const router = useRouter();
   const { items, totalPrice } = useCart();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   if (items.length === 0) {
     return (
@@ -27,6 +34,38 @@ export default function WaitlistPage() {
       </div>
     );
   }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
+
+    try {
+      const response = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({
+          "form-name": "waitlist",
+          name,
+          email,
+          "interested-kits": items
+            .map((item) => `${item.product.name} (Qty: ${item.quantity})`)
+            .join(", "),
+          "estimated-total": `$${totalPrice.toFixed(2)}`,
+        }).toString(),
+      });
+
+      if (response.ok) {
+        router.push("/checkout/success");
+      } else {
+        setError("Failed to join waitlist. Please try again.");
+      }
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -91,27 +130,7 @@ export default function WaitlistPage() {
               </p>
             </div>
 
-            <form
-              name="waitlist"
-              method="POST"
-              action="/checkout/success"
-              data-netlify="true"
-              className="space-y-4"
-            >
-              <input type="hidden" name="form-name" value="waitlist" />
-
-              {/* Hidden field to include wishlist items */}
-              <input
-                type="hidden"
-                name="interested-kits"
-                value={items.map(item => `${item.product.name} (Qty: ${item.quantity})`).join(', ')}
-              />
-              <input
-                type="hidden"
-                name="estimated-total"
-                value={`$${totalPrice.toFixed(2)}`}
-              />
-
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label
                   htmlFor="name"
@@ -122,7 +141,8 @@ export default function WaitlistPage() {
                 <input
                   type="text"
                   id="name"
-                  name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   required
                   placeholder="Jane Doe"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-colors"
@@ -139,18 +159,30 @@ export default function WaitlistPage() {
                 <input
                   type="email"
                   id="email"
-                  name="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   required
                   placeholder="jane@example.com"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-colors"
                 />
               </div>
 
+              {error && (
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4">
+                  <p className="text-red-800 text-sm">{error}</p>
+                </div>
+              )}
+
               <button
                 type="submit"
-                className="w-full py-4 rounded-xl font-bold text-lg transition-colors bg-green-500 hover:bg-green-600 text-white"
+                disabled={isLoading}
+                className={`w-full py-4 rounded-xl font-bold text-lg transition-colors ${
+                  isLoading
+                    ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                    : "bg-green-500 hover:bg-green-600 text-white"
+                }`}
               >
-                Notify Me When Ready
+                {isLoading ? "Signing up..." : "Notify Me When Ready"}
               </button>
             </form>
 
