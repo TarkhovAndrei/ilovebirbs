@@ -1,99 +1,4 @@
-"use client";
-
-import { useState } from "react";
-import Link from "next/link";
-
 export default function SubmitPhotoPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    birdType: "",
-    location: "",
-    caption: "",
-    photoUrl: "",
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError("");
-
-    try {
-      const response = await fetch("/api/submit-photo", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        setError(data.error || "Failed to submit photo");
-      }
-    } catch (err) {
-      setError("Something went wrong. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  if (isSubmitted) {
-    return (
-      <div className="min-h-screen bg-gray-50 py-12">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-sm p-8 text-center">
-            <div className="text-6xl mb-6">🐦</div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              Thanks for Sharing!
-            </h1>
-            <p className="text-gray-600 mb-6">
-              Your photo has been submitted for review. Once approved, it will
-              appear in our community gallery. We&apos;ll notify you by email!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/gallery"
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-medium transition-colors"
-              >
-                View Gallery
-              </Link>
-              <button
-                onClick={() => {
-                  setIsSubmitted(false);
-                  setFormData({
-                    name: "",
-                    email: "",
-                    birdType: "",
-                    location: "",
-                    caption: "",
-                    photoUrl: "",
-                  });
-                }}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-900 px-8 py-3 rounded-full font-medium transition-colors"
-              >
-                Submit Another
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +13,9 @@ export default function SubmitPhotoPage() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form name="photo-submission" method="POST" data-netlify="true" className="space-y-6">
+            <input type="hidden" name="form-name" value="photo-submission" />
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label
@@ -121,8 +28,6 @@ export default function SubmitPhotoPage() {
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   placeholder="John D."
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-colors"
@@ -140,8 +45,6 @@ export default function SubmitPhotoPage() {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   placeholder="john@example.com"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-colors"
@@ -161,8 +64,6 @@ export default function SubmitPhotoPage() {
                   type="text"
                   id="birdType"
                   name="birdType"
-                  value={formData.birdType}
-                  onChange={handleChange}
                   required
                   placeholder="e.g., Northern Cardinal"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-colors"
@@ -180,8 +81,6 @@ export default function SubmitPhotoPage() {
                   type="text"
                   id="location"
                   name="location"
-                  value={formData.location}
-                  onChange={handleChange}
                   placeholder="e.g., Ohio, USA"
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-colors"
                 />
@@ -198,8 +97,6 @@ export default function SubmitPhotoPage() {
               <textarea
                 id="caption"
                 name="caption"
-                value={formData.caption}
-                onChange={handleChange}
                 required
                 rows={3}
                 placeholder="Tell us about this photo..."
@@ -218,8 +115,6 @@ export default function SubmitPhotoPage() {
                 type="url"
                 id="photoUrl"
                 name="photoUrl"
-                value={formData.photoUrl}
-                onChange={handleChange}
                 required
                 placeholder="https://example.com/your-photo.jpg"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-colors"
@@ -230,22 +125,11 @@ export default function SubmitPhotoPage() {
               </p>
             </div>
 
-            {error && (
-              <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-                <p className="text-red-800 text-sm">{error}</p>
-              </div>
-            )}
-
             <button
               type="submit"
-              disabled={isSubmitting}
-              className={`w-full py-4 rounded-xl font-bold text-lg transition-colors ${
-                isSubmitting
-                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-green-500 hover:bg-green-600 text-white"
-              }`}
+              className="w-full py-4 rounded-xl font-bold text-lg transition-colors bg-green-500 hover:bg-green-600 text-white"
             >
-              {isSubmitting ? "Submitting..." : "Submit Photo"}
+              Submit Photo
             </button>
           </form>
 
