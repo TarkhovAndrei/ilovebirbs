@@ -14,7 +14,6 @@ export function PhotoCard({ photo }: PhotoCardProps) {
             src={photo.videoUrl}
             className="w-full h-full object-cover"
             autoPlay
-            controls
             loop
             muted
             playsInline
