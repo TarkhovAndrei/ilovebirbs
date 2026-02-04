@@ -3,7 +3,7 @@
     "id": "starter-kit",
     "slug": "starter-kit",
     "name": "Starter Birb Kit",
-    "price": 89.99,
+    "price": 199.99,
     "description": "Perfect for beginners! This kit includes everything you need to start capturing amazing bird photos in your backyard. Easy to assemble with our step-by-step guide.",
     "longDescription": "The Starter Birb Kit is designed for bird enthusiasts who want to dip their toes into smart bird watching. The kit comes with a Raspberry Pi Zero 2 W, a quality 5MP camera module, and a simple but effective wooden feeder base. The included software captures photos whenever motion is detected, storing them locally for you to browse. Perfect for beginners and makes a great gift!",
     "features": [
@@ -14,7 +14,7 @@
       "Power adapter",
       "Step-by-step assembly guide"
     ],
-    "image": "/images/products/starter-kit.svg",
+    "image": "/images/products/starter/preview.jpeg",
     "inStock": true,
     "featured": true
   },
@@ -22,7 +22,7 @@
     "id": "pro-kit",
     "slug": "pro-kit",
     "name": "Pro Birb Kit",
-    "price": 149.99,
+    "price": 399.99,
     "description": "For serious bird watchers! Features a high-resolution camera, weather-resistant enclosure, and WiFi streaming capabilities.",
     "longDescription": "Take your bird watching to the next level with the Pro Birb Kit. This premium package includes a Raspberry Pi 4 with 2GB RAM, a stunning 12MP camera module with autofocus, and a weather-resistant enclosure that can withstand rain, snow, and sun. Stream live video to your phone, get instant notifications when birds arrive, and capture crystal-clear photos day or night with the included IR LEDs.",
     "features": [
@@ -34,7 +34,7 @@
       "Mobile app access",
       "Large capacity feeder"
     ],
-    "image": "/images/products/pro-kit.svg",
+    "image": "/images/products/pro/preview.jpeg",
     "inStock": true,
     "featured": true
   },
@@ -42,7 +42,7 @@
     "id": "ultimate-kit",
     "slug": "ultimate-kit",
     "name": "Ultimate Birb Kit",
-    "price": 249.99,
+    "price": 499.99,
     "description": "The complete package! AI-powered bird identification, solar charging, and cloud storage for all your birb photos.",
     "longDescription": "The Ultimate Birb Kit is for the dedicated ornithologist who wants the absolute best. This kit features a Raspberry Pi 4 with 4GB RAM running our custom AI software that automatically identifies bird species in real-time. Solar panels keep your feeder running indefinitely, while cloud integration ensures you never lose a precious photo. Includes premium cedar wood construction and a lifetime software license.",
     "features": [
@@ -56,7 +56,7 @@
       "Temperature & humidity sensors",
       "Lifetime software updates"
     ],
-    "image": "/images/products/ultimate-kit.svg",
+    "image": "/images/products/ultimate/preview.png",
     "inStock": true,
     "featured": true
   },

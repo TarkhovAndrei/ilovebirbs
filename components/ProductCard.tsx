@@ -15,12 +15,12 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <Link href={`/products/${product.slug}`}>
-        <div className="relative h-48 bg-gradient-to-br from-green-50 to-sky-50">
+        <div className="relative h-96 bg-gradient-to-br from-green-50 to-sky-50">
           <Image
             src={product.image}
             alt={product.name}
             fill
-            className="object-contain p-4"
+            className="object-cover"
           />
           {product.featured && (
             <span className="absolute top-3 left-3 bg-yellow-400 text-yellow-900 text-xs font-bold px-2 py-1 rounded-full">
