@@ -22,6 +22,7 @@ export interface GalleryPhoto {
   approved: boolean;
   featured: boolean;
   isPlaceholder?: boolean;
+  upvotes?: number;
 }
 
 export interface CartItem {

@@ -8,7 +8,8 @@
     "birdType": "Northern Cardinal",
     "location": "Ohio",
     "approved": true,
-    "featured": true
+    "featured": true,
+    "upvotes": 45
   },
   {
     "id": "2",
@@ -30,7 +31,8 @@
     "birdType": "Blue Jay",
     "location": "Michigan",
     "approved": true,
-    "featured": true
+    "featured": true,
+    "upvotes": 32
   },
   {
     "id": "4",
@@ -41,7 +43,8 @@
     "birdType": "Black-capped Chickadee",
     "location": "Vermont",
     "approved": true,
-    "featured": true
+    "featured": true,
+    "upvotes": 67
   },
   {
     "id": "5",
@@ -63,7 +66,8 @@
     "birdType": "American Goldfinch",
     "location": "Colorado",
     "approved": true,
-    "featured": true
+    "featured": true,
+    "upvotes": 23
   },
   {
     "id": "7",
@@ -74,7 +78,8 @@
     "birdType": "Tufted Titmouse",
     "location": "North Carolina",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 51
   },
   {
     "id": "8",
@@ -96,7 +101,8 @@
     "birdType": "House Finch",
     "location": "California",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 89
   },
   {
     "id": "10",
@@ -107,7 +113,8 @@
     "birdType": "White-breasted Nuthatch",
     "location": "New York",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 12
   },
   {
     "id": "11",
@@ -118,7 +125,8 @@
     "birdType": "Downy Woodpecker",
     "location": "Pennsylvania",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 38
   },
   {
     "id": "12",
@@ -140,7 +148,8 @@
     "birdType": "Dark-eyed Junco",
     "location": "Montana",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 76
   },
   {
     "id": "14",
@@ -151,7 +160,8 @@
     "birdType": "House Sparrow",
     "location": "Illinois",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 29
   },
   {
     "id": "15",
@@ -162,7 +172,8 @@
     "birdType": "Mourning Dove",
     "location": "Arizona",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 44
   },
   {
     "id": "16",
@@ -184,7 +195,8 @@
     "birdType": "Carolina Wren",
     "location": "Georgia",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 58
   },
   {
     "id": "18",
@@ -195,7 +207,8 @@
     "birdType": "Red-bellied Woodpecker",
     "location": "Florida",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 19
   },
   {
     "id": "19",
@@ -206,7 +219,8 @@
     "birdType": "American Robin",
     "location": "Wisconsin",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 63
   },
   {
     "id": "20",
@@ -217,7 +231,8 @@
     "birdType": "Eastern Bluebird",
     "location": "Virginia",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 41
   },
   {
     "id": "21",
@@ -239,7 +254,8 @@
     "birdType": "Song Sparrow",
     "location": "Oregon",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 27
   },
   {
     "id": "23",
@@ -250,7 +266,8 @@
     "birdType": "Purple Finch",
     "location": "Maine",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 55
   },
   {
     "id": "24",
@@ -261,7 +278,8 @@
     "birdType": "Cedar Waxwing",
     "location": "Washington",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 71
   },
   {
     "id": "25",
@@ -272,7 +290,8 @@
     "birdType": "Brown-headed Cowbird",
     "location": "Kansas",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 34
   },
   {
     "id": "26",
@@ -283,7 +302,8 @@
     "birdType": "Red-winged Blackbird",
     "location": "Minnesota",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 48
   },
   {
     "id": "27",
@@ -294,7 +314,8 @@
     "birdType": "European Starling",
     "location": "New Jersey",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 92
   },
   {
     "id": "28",
@@ -305,7 +326,8 @@
     "birdType": "Hairy Woodpecker",
     "location": "Idaho",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 16
   },
   {
     "id": "29",
@@ -316,7 +338,8 @@
     "birdType": "Common Grackle",
     "location": "Louisiana",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 39
   },
   {
     "id": "30",
@@ -327,7 +350,8 @@
     "birdType": "Pine Siskin",
     "location": "Wyoming",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 81
   },
   {
     "id": "31",
@@ -338,7 +362,8 @@
     "birdType": "Chipping Sparrow",
     "location": "Tennessee",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 25
   },
   {
     "id": "32",
@@ -349,7 +374,8 @@
     "birdType": "Rose-breasted Grosbeak",
     "location": "Connecticut",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 52
   },
   {
     "id": "33",
@@ -360,7 +386,8 @@
     "birdType": "Baltimore Oriole",
     "location": "Maryland",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 68
   },
   {
     "id": "34",
@@ -371,7 +398,8 @@
     "birdType": "Indigo Bunting",
     "location": "Kentucky",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 31
   },
   {
     "id": "35",
@@ -382,6 +410,7 @@
     "birdType": "Spotted Towhee",
     "location": "Nevada",
     "approved": true,
-    "featured": false
+    "featured": false,
+    "upvotes": 73
   }
 ]

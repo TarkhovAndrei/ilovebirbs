@@ -1,16 +1,73 @@
+"use client";
+
 import Link from "next/link";
 import { PhotoCard } from "@/components/PhotoCard";
-import gallery from "@/data/gallery.json";
+import galleryData from "@/data/gallery.json";
 import { GalleryPhoto } from "@/types";
-
-export const metadata = {
-  title: "Bird Photo Gallery | I Love Birbs",
-  description:
-    "Beautiful bird photos captured by our community using I Love Birbs camera kits. Cardinals, blue jays, hummingbirds, and more!",
-};
+import { useState, useEffect } from "react";
 
 export default function GalleryPage() {
-  const approvedPhotos = (gallery as GalleryPhoto[]).filter((p) => p.approved);
+  const [photos, setPhotos] = useState<GalleryPhoto[]>([]);
+
+  useEffect(() => {
+    const approvedPhotos = (galleryData as GalleryPhoto[]).filter(
+      (p) => p.approved
+    );
+
+    // Load upvotes from localStorage
+    const savedUpvotes = JSON.parse(
+      localStorage.getItem("photoUpvotes") || "{}"
+    );
+
+    // Update photos with saved upvotes
+    const photosWithUpvotes = approvedPhotos.map((photo) => ({
+      ...photo,
+      upvotes: savedUpvotes[photo.id] ?? photo.upvotes ?? 0,
+    }));
+
+    // Sort photos by upvotes while keeping placeholders in fixed positions
+    const sortedPhotos = sortPhotosKeepingPlaceholders(photosWithUpvotes);
+    setPhotos(sortedPhotos);
+  }, []);
+
+  const sortPhotosKeepingPlaceholders = (photos: GalleryPhoto[]) => {
+    // Record original placeholder positions
+    const placeholderPositions: { [key: number]: GalleryPhoto } = {};
+    photos.forEach((photo, index) => {
+      if (photo.isPlaceholder) {
+        placeholderPositions[index] = photo;
+      }
+    });
+
+    // Get non-placeholder photos and sort by upvotes
+    const regularPhotos = photos
+      .filter((p) => !p.isPlaceholder)
+      .sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
+
+    // Rebuild array with placeholders at original positions
+    const result: GalleryPhoto[] = [];
+    let regularIndex = 0;
+
+    for (let i = 0; i < photos.length; i++) {
+      if (placeholderPositions[i]) {
+        result.push(placeholderPositions[i]);
+      } else {
+        result.push(regularPhotos[regularIndex]);
+        regularIndex++;
+      }
+    }
+
+    return result;
+  };
+
+  const handleUpvoteChange = (photoId: string, newCount: number) => {
+    // Update the photos state with new upvote count
+    const updatedPhotos = photos.map((photo) =>
+      photo.id === photoId ? { ...photo, upvotes: newCount } : photo
+    );
+    const sortedPhotos = sortPhotosKeepingPlaceholders(updatedPhotos);
+    setPhotos(sortedPhotos);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 py-12">
@@ -31,10 +88,14 @@ export default function GalleryPage() {
           </Link>
         </div>
 
-        {approvedPhotos.length > 0 ? (
+        {photos.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {approvedPhotos.map((photo) => (
-              <PhotoCard key={photo.id} photo={photo} />
+            {photos.map((photo) => (
+              <PhotoCard
+                key={photo.id}
+                photo={photo}
+                onUpvoteChange={handleUpvoteChange}
+              />
             ))}
           </div>
         ) : (
