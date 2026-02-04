@@ -14,12 +14,14 @@ export interface Product {
 export interface GalleryPhoto {
   id: string;
   imageUrl: string;
+  videoUrl?: string;
   caption: string;
   submittedBy: string;
   birdType: string;
   location: string;
   approved: boolean;
   featured: boolean;
+  isPlaceholder?: boolean;
 }
 
 export interface CartItem {

@@ -9,12 +9,33 @@ export function PhotoCard({ photo }: PhotoCardProps) {
   return (
     <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       <div className="relative h-64 bg-gradient-to-br from-sky-50 to-green-50">
-        <Image
-          src={photo.imageUrl}
-          alt={photo.caption}
-          fill
-          className="object-cover"
-        />
+        {photo.videoUrl ? (
+          <video
+            src={photo.videoUrl}
+            className="w-full h-full object-cover"
+            autoPlay
+            controls
+            loop
+            muted
+            playsInline
+          />
+        ) : (
+          <Image
+            src={photo.imageUrl}
+            alt={photo.caption}
+            fill
+            className="object-cover"
+          />
+        )}
+        {photo.isPlaceholder && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+            <div className="bg-white px-4 py-2 rounded-full shadow-lg">
+              <p className="text-gray-900 font-bold text-sm">
+                Here could be your birbs!
+              </p>
+            </div>
+          </div>
+        )}
       </div>
       <div className="p-4">
         <p className="text-gray-900 font-medium">{photo.caption}</p>

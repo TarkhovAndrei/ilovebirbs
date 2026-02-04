@@ -25,6 +25,39 @@ export default function Home() {
               kits. Capture stunning photos of your feathered friends
               automatically! Coming soon — join the waitlist!
             </p>
+
+            {/* Example Videos */}
+            <div className="w-full max-w-6xl mx-auto mb-8 px-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-2xl">
+                  <video
+                    src="/videos/preview_short_cardinal.mp4"
+                    className="w-full rounded-xl shadow-lg"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                  <p className="text-sm text-green-100 mt-3 font-medium text-center">
+                    Northern Cardinal
+                  </p>
+                </div>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 shadow-2xl">
+                  <video
+                    src="/videos/preview_short_titmouse.mp4"
+                    className="w-full rounded-xl shadow-lg"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                  <p className="text-sm text-green-100 mt-3 font-medium text-center">
+                    Tufted Titmouse
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/products"
@@ -41,7 +74,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="text-center pb-8 text-8xl">🐦</div>
       </section>
 
       {/* Features Section */}
